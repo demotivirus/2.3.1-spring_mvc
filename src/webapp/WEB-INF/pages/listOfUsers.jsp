@@ -5,8 +5,8 @@
     <title>List of Users</title>
 </head>
 <body>
+<div align="center">
 <h1>User Table</h1>
-
 <table>
     <tr>
         <th>id</th>
@@ -22,7 +22,7 @@
             <td>${user.password}</td>
             <td>${user.money}</td>
             <td>
-                <a href="/editUser/${user.id}"> Edit</a>
+                <a href="/editUser?id=${user.id}"> Edit</a>
                 <a href="/deleteUser/${user.id}"> Delete</a>
             </td>
         </tr>
@@ -32,5 +32,6 @@
 
 <c:url value="/addUser" var="add"/>
 <a href="${add}">Add new user</a>
+</div>
 </body>
 </html>

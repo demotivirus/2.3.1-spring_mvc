@@ -7,6 +7,7 @@ import web.model.User;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserDaoImpl implements UserDao{
@@ -40,7 +41,8 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public User getUserFromId(long id) {
-        return sessionFactory.getCurrentSession().get(User.class, id);
+    public User getUserFromId(Long id) {
+        User user = sessionFactory.getCurrentSession().get(User.class, id);
+        return user;
     }
 }
